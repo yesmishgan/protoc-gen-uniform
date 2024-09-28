@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package account;
+
+option go_package = "github.com/yesmishgan/dengi-api/pkg/api/account/account";
+
+service AccountService {
+  rpc AccountInfo(AccountInfoRequest) returns (AccountInfoResponse){}
+  rpc Delete(DeleteRequest) returns (DeleteResponse) {}
+  rpc Create(CreateRequest) returns (CreateResponse) {}
+}
+
+message AccountInfoRequest {
+  string uuid = 1;
+}
+
+message AccountInfoResponse {
+  Account account = 1;
+}
+
+message DeleteRequest {
+  string uuid = 1;
+}
+
+message DeleteResponse {}
+
+message CreateRequest {
+  Account account = 1;
+}
+
+message CreateResponse {
+  string uuid = 1;
+}
+
+message Account {
+  string first_name = 1;
+  string last_name = 2;
+}
