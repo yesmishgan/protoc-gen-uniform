@@ -1,4 +1,4 @@
-module protoc-gen-bomboglot
+module github.com/yesmishgan/protoc-gen-bomboglot
 
 go 1.22.3
 
