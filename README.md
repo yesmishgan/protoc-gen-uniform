@@ -1,1 +1,1 @@
-# protoc-gen-bomboglot
+# protoc-gen-uniform
