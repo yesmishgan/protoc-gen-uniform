@@ -2,13 +2,13 @@ LOCAL_BIN:=$(CURDIR)/bin
 
 .PHONY: build
 build:
-	go build -o ${LOCAL_BIN}/protoc-gen-bomboglot
+	go build -o ${LOCAL_BIN}/protoc-gen-uniform
 
 .PHONY: example
 example: build
 	protoc \
-		--plugin=protoc-gen-bomboglot=$(LOCAL_BIN)/protoc-gen-bomboglot \
-		--bomboglot_out=./test/out \
+		--plugin=protoc-gen-uniform=$(LOCAL_BIN)/protoc-gen-uniform \
+		--uniform_out=./test/out \
 		`find ./test -name "*.proto"`
 
 GOLANGCI_BIN := $(LOCAL_BIN)/golangci-lint
